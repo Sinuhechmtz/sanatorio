@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <!-- ============== METADATOS ESENCIALES ============== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía del Paciente - Sanatorio Durango</title>
+
+    <!-- ============== ICONO DE LA PESTAÑA (FAVICON) ============== -->
+    <link rel="icon" href="img/icono.ico" type="image/png">
+
+    <!-- ============== FRAMEWORK DE DISEÑO (TAILWIND CSS) ============== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ============== ICONOS (FONT AWESOME) ============== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ============== FUENTES (GOOGLE FONTS) ============== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ============== CONFIGURACIÓN Y ESTILOS PERSONALIZADOS ============== -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-blue': '#0D47A1',
+                        'accent-teal': '#009688',
+                        'dark-text': '#333333',
+                        'light-gray': '#F5F5F5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+      .group:hover .group-hover\:block { display: block; }
+      .mega-menu { left: 50%; transform: translateX(-50%); }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+</head>
+<body class="font-roboto text-dark-text">
+
+    <!-- ======================= ENCABEZADO Y NAVEGACIÓN ======================= -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html">
+                <img src="img/Logo.jpg" alt="Logo Sanatorio Durango" class="h-12">
+            </a>
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Inicio</a></li>
+                <li><a href="nosotros.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Nosotros</a></li>
+                
+                <!-- Mega Menú de Servicios -->
+                <li class="relative group">
+                    <a href="#" class="text-gray-700 hover:text-accent-teal transition duration-300">
+                        Servicios <i class="fas fa-angle-down text-xs"></i>
+                    </a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-lg top-full pt-8 pb-6 px-8 w-[800px] mega-menu">
+                         <div class="grid grid-cols-4 gap-8">
+                            <!-- Columnas del menú -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Especialidades</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="medicina-interna.html" class="block text-sm text-gray-700 hover:text-accent-teal">Medicina Interna</a></li>
+                                    <li><a href="obstetricia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Obstetricia</a></li>
+                                    <li><a href="oncologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Oncología</a></li>
+                                    <li><a href="quirofanos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quirófanos</a></li>
+                                    <li><a href="unidad-endoscopia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad de Endoscopía</a></li>
+                                    <li><a href="consulta-externa.html" class="block text-sm text-gray-700 hover:text-accent-teal">Consulta Externa</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Diagnóstico</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="analisis-clinicos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Análisis Clínicos</a></li>
+                                    <li><a href="anatomia-patologica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Anatomía Patológica</a></li>
+                                    <li><a href="resonancia-magnetica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Resonancia Magnética</a></li>
+                                    <li><a href="tomografia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tomografía</a></li>
+                                    <li><a href="ultrasonido.html" class="block text-sm text-gray-700 hover:text-accent-teal">Ultrasonido</a></li>
+                                    <li><a href="hemodinamia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Hemodinamia</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Terapias y Cuidados</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="terapia-intensiva.html" class="block text-sm text-gray-700 hover:text-accent-teal">Terapia Intensiva e Intermedia</a></li>
+                                    <li><a href="unidad-coronaria.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad Coronaria</a></li>
+                                    <li><a href="cuidados-intensivos-neonatales.html" class="block text-sm text-gray-700 hover:text-accent-teal">Cuidados Intensivos Neonatales</a></li>
+                                    <li><a href="fisioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Fisioterapia</a></li>
+                                    <li><a href="quimioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quimioterapia</a></li>
+                                    <li><a href="clinica-dolor.html" class="block text-sm text-gray-700 hover:text-accent-teal">Clínica de Dolor</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                               <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Otros Servicios</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="urgencias.html" class="block text-sm text-gray-700 hover:text-accent-teal">Urgencias</a></li>
+                                    <li><a href="banco-de-sangre.html" class="block text-sm text-gray-700 hover:text-accent-teal">Banco de Sangre</a></li>
+                                    <li><a href="inhaloterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Inhaloterapia</a></li>
+                                    <li><a href="tanatologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tanatología</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="maternidad.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Maternidad</a></li>
+                <!-- ESTILO: Indica la página activa -->
+                <li><a href="guia-paciente.html" class="text-accent-teal font-bold transition duration-300">Guía del Paciente</a></li>
+                <li><a href="contacto.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Contacto</a></li>
+            </ul>
+            <a href="agendar-cita.html" class="hidden lg:block bg-accent-teal text-white font-bold py-2 px-6 rounded-full hover:bg-teal-700 transition duration-300">
+                Agendar Cita
+            </a>
+            <button id="mobile-menu-button" class="lg:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ======================= SECCIÓN DE BIENVENIDA ======================= -->
+        <section class="bg-light-gray py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-montserrat font-bold text-primary-blue mb-4">Guía para Pacientes y Familiares</h1>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Aquí encontrarás toda la información útil para que tu estancia en Sanatorio Durango sea lo más cómoda y segura posible.</p>
+            </div>
+        </section>
+        
+        <!-- ======================= CONTENIDO PRINCIPAL DE LA GUÍA ======================= -->
+        <div class="container mx-auto px-6 py-20 grid lg:grid-cols-3 gap-12">
+            
+            <!-- Columna Principal de Información -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Sección Admisión -->
+                <section id="admision">
+                    <h2 class="text-3xl font-montserrat font-bold text-primary-blue mb-6 border-b-2 pb-3">Admisión y Salida</h2>
+                    <div class="space-y-4 text-gray-700">
+                        <h3 class="text-xl font-bold text-accent-teal">Procedimiento de Admisión</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Para su hospitalización se presentará en admisión en donde se le darán a requisitar los formatos necesarios para el trámite de ingreso, así como el pase de visitas, manual de bienvenida y su folleto de los Derechos del Paciente.</li>
+                            <li>El paciente entregará los documentos que el médico le entregó para tramitar su internamiento, y deberá presentar su identificación vigente, de la empresa, aseguradora o compañía donde trabaja.</li>
+                             <li>En el caso de pacientes particulares, deberán observar los lineamientos de ingreso (depósito). Éste varía dependiendo del servicio donde ingrese.</li>
+                            <li>Solicitamos a todos los pacientes traer consigo todos sus objetos personales, como son: pantuflas, bata, pijama, cepillo de dientes y pasta dental.</li>
+                            <li>No se permite el ingreso al hospital con medicamentos; éstos serán proporcionados únicamente por el hospital.</li>
+                        </ul>
+                        <h3 class="text-xl font-bold text-accent-teal mt-6">Procedimiento de Salida</h3>
+                         <ul class="list-disc list-inside space-y-2">
+                            <li>El egreso de pacientes se dará cuando hayan sido dados de alta por su médico tratante, una vez que se dé la alta a un paciente, el médico debe dejarlo por escrito en el expediente.</li>
+                            <li>La enfermera de piso notificará el alta al departamento de Control de Cuentas para que se inicie el proceso de trámite de la cuenta.</li>
+                            <li>Finalmente deberá pasar al departamento de Admisión a hacer entrega del control remoto de la T.V.</li>
+                            <li>La habitación vence cada 24 horas, por lo que si se excede deberá pagar el cargo extra de acuerdo al tiempo de estancia hospitalaria.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Sección Seguros -->
+                <section id="seguros">
+                    <h2 class="text-3xl font-montserrat font-bold text-primary-blue mb-6 border-b-2 pb-3">Seguros de Gastos Médicos</h2>
+                     <div class="space-y-4 text-gray-700">
+                        <h3 class="text-xl font-bold text-accent-teal">Ingresos Programados por Compañías de Seguros</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Deberá presentarse en el hospital 2 o 3 horas antes de la hora señalada para su intervención quirúrgica.</li>
+                            <li>Deberá presentar la Carta de autorización emitida por la Compañía de Seguros.</li>
+                             <li>Deberá presentar una identificación oficial vigente, así como la de su familiar responsable.</li>
+                             <li>Credencial de seguro y/o póliza vigente.</li>
+                            <li>Estudios de laboratorio, gabinete y declaraciones preoperatorias.</li>
+                        </ul>
+                        <p><strong class="font-bold">Nota:</strong> Si en un plazo de 48 horas no se recibe la autorización por parte de la compañía de seguros, se pide un depósito.</p>
+                        
+                        <h3 class="text-xl font-bold text-accent-teal mt-4">Procedimiento de Salida con Seguro</h3>
+                        <p>Para realizar su cierre de su cuenta es necesaria la carta final que emite la aseguradora en la cual especifica el monto a pagar, el monto cubierto por la compañía de seguros, monto de deducible o coasegro a pagar por el paciente, así como el tabulador de los honorarios médicos.</p>
+                         <p><strong class="font-bold">Nota:</strong> Este proceso será tardado ya que tenemos que esperar la carta que emite la aseguradora, por lo cual agradecemos su comprensión y paciencia, trataremos que su estancia sea lo más corta posible.</p>
+                    </div>
+                </section>
+
+                <!-- Sección de Aseguradoras con Filtro -->
+                <section id="aseguradoras">
+                    <h2 class="text-3xl font-montserrat font-bold text-primary-blue mb-6 border-b-2 pb-3">Aseguradoras en Convenio</h2>
+                    <p class="text-gray-700 mb-6">Contamos con convenio con las principales aseguradoras del país. Utiliza el buscador para encontrar la tuya rápidamente. Si no aparece en la lista, por favor contáctanos.</p>
+                    
+                    <!-- Barra de Búsqueda -->
+                    <div class="relative mb-8">
+                        <input type="text" id="insurer-search" placeholder="Busca tu aseguradora..." class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-teal focus:border-transparent">
+                        <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+
+                    <!-- Lista de Aseguradoras -->
+                    <div id="insurer-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2 text-gray-800">
+                        <!-- Las aseguradoras se listarán aquí -->
+                    </div>
+                </section>
+                
+                <!-- Sección Derechos del Paciente (Acordeón) -->
+                <section id="derechos">
+                    <h2 class="text-3xl font-montserrat font-bold text-primary-blue mb-6 border-b-2 pb-3">Derechos de los Pacientes</h2>
+                    <div id="accordion-container" class="space-y-2">
+                        <!-- Los items del acordeón se insertarán aquí con JavaScript -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Lateral -->
+            <aside class="space-y-8">
+                <!-- Servicios Complementarios -->
+                <div class="bg-light-gray p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-montserrat font-bold text-primary-blue mb-4">Servicios Complementarios</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-accent-teal"><i class="fas fa-wifi mr-2"></i>Servicio de Internet</h4>
+                            <p class="text-sm text-gray-600">Conexión inalámbrica gratuita para pacientes y familiares. Solicite la clave en Relaciones Públicas (ext. 1270) o a Sistemas (24 hrs).</p>
+                        </div>
+                         <div>
+                            <h4 class="font-bold text-accent-teal"><i class="fas fa-utensils mr-2"></i>Servicio de Cafetería</h4>
+                            <p class="text-sm text-gray-600">Abierta de Lunes a Domingo de 08:00 a 20:00 hrs. Los alimentos proporcionados en habitación son de consumo exclusivo del paciente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registro Recién Nacido -->
+                <div class="bg-light-gray p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-montserrat font-bold text-primary-blue mb-4">Registro de Recién Nacido</h3>
+                    <p class="text-sm text-gray-700 mb-4">Contamos con un servicio externo para tramitar el acta de nacimiento. Para más información, contacte a la Lic. Viridiana Gómez Briseño a los teléfonos: 55-1294-8582 ó 55-5405-3866.</p>
+                    <h4 class="font-bold text-accent-teal mb-2">Documentos Necesarios:</h4>
+                    <ul class="text-xs text-gray-600 list-disc list-inside">
+                        <li>Solicitud de Registro (Original)</li>
+                        <li>Certificado de Nacimiento (Original)</li>
+                        <li>Acta de Matrimonio o Nacimiento de los padres (Original)</li>
+                        <li>Identificación Oficial de los padres (Copia)</li>
+                        <li>Comprobante de Domicilio (Copia)</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-light-gray p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-montserrat font-bold text-primary-blue mb-4">Documentos Importantes</h3>
+                    <div class="space-y-3">
+                        <a href="pdf/reglamento-interno.pdf" target="_blank" class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm hover:bg-gray-50 transition">
+                            <span class="font-semibold text-gray-700">Reglamento Interno</span>
+                            <i class="fas fa-download text-accent-teal"></i>
+                        </a>
+                        <a href="pdf/recomendaciones-embarazo.pdf" target="_blank" class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm hover:bg-gray-50 transition">
+                            <span class="font-semibold text-gray-700">Recomendaciones del Embarazo</span>
+                            <i class="fas fa-download text-accent-teal"></i>
+                        </a>
+                        <a href="pdf/manual-derechos-pacientes.pdf" target="_blank" class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm hover:bg-gray-50 transition">
+                            <span class="font-semibold text-gray-700">Manual de Derechos de los Pacientes</span>
+                            <i class="fas fa-download text-accent-teal"></i>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ======================= PIE DE PÁGINA (FOOTER) ======================= -->
+    <footer class="bg-primary-blue text-white pt-16 pb-8">
+       <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 mb-8">
+            <!-- Columnas del footer -->
+             <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Sanatorio Durango</h4>
+                <p class="text-gray-300 text-sm">79 años de experiencia cuidando la salud de la comunidad.</p>
+                <p class="text-gray-300 text-sm mt-2">Licencia Sanitaria: 1006000008</p>
+            </div>
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Navegación</h4>
+                <ul>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Servicios</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Directorio Médico</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Bolsa de Trabajo</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-gray-300 hover:text-white transition">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Contacto</h4>
+                <p class="text-gray-300 text-sm mb-2"><i class="fas fa-phone mr-2"></i> 55-5148-4658</p>
+                <p class="text-gray-300 text-sm"><i class="fas fa-map-marker-alt mr-2"></i> Durango 296, Col. Roma, CDMX</p>
+            </div>
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-blue-800 text-center pt-6">
+            <p class="text-gray-400 text-sm">&copy; 2025 Sanatorio Durango. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- SCRIPT PARA EL ACORDEÓN DE DERECHOS DEL PACIENTE ---
+        const derechos = [
+            { title: "1. Recibir atención médica adecuada.", content: "El paciente tiene derecho a que la atención médica que se le otorgue sea por personal preparado de acuerdo a las necesidades de su estado de salud y a las circunstancias en que se brinda la atención; así como a ser informado cuando requiera referencia a otro médico." },
+            { title: "2. Recibir trato digno y respetuoso.", content: "El paciente tiene derecho a que el médico, la enfermera y el personal que le brinden atención medica, se identifiquen y le otorguen un trato digno, con respeto a sus convicciones personales y morales, principalmente las relacionadas con sus condiciones socioculturales, de género, de pudor y a su intimidad." },
+            { title: "3. Recibir información suficiente, clara, oportuna y veraz.", content: "El paciente, o en su caso el responsable, tiene derecho a que el médico tratante les brinde información completa sobre el diagnóstico, pronóstico y tratamiento; se exprese siempre en forma clara y comprensible y sea siempre veraz, ajustada a la realidad." },
+            { title: "4. Decidir libremente sobre su atención.", content: "El paciente, o en su caso el responsable, tiene derecho a decidir con libertad, de manera personal y sin ninguna forma de presión, aceptar o rechazar cada procedimiento diagnostico o terapéutico ofrecido, así como el uso de medida extraordinarias de supervivencia en pacientes terminales." },
+            { title: "5. Otorgar o no su consentimiento válidamente informado.", content: "El paciente tiene derecho a expresar su consentimiento, siempre por escrito, cuando acepte sujetarse con fines de diagnostico o terapéuticos, a procedimientos que impliquen un riesgo, para lo cual deberá ser informado en forma amplia y completa." },
+            { title: "6. Ser tratado con confidencialidad.", content: "El paciente tiene derecho a que toda la información que se exprese a su médico, se maneje con estricta confidencialidad y no se divulgue más que con la autorización expresa de su parte." },
+            { title: "7. Contar con facilidades para obtener una segunda opción.", content: "El paciente tiene derecho a recibir por escrito la información necesaria para obtener una segunda opinión sobre el diagnóstico, pronóstico o tratamiento relacionados con su estado de salud." },
+            { title: "8. Recibir atención médica en caso de Urgencia.", content: "Cuando está en peligro la vida, un órgano o una función, el paciente tiene derecho a recibir atención de urgencia por un médico, en cualquier establecimiento de salud, sea público o privado." },
+            { title: "9. Contar con un expediente clínico.", content: "El paciente tiene derecho a que el conjunto de los datos relacionados con la atención médica que reciba sean asentadas en forma veraz, clara, precisa, legible y completa en un expediente." },
+            { title: "10. Ser atendido cuando se inconforme.", content: "El paciente tiene derecho a ser escuchado y recibir respuesta por la instancia correspondiente cuando se inconforme por la atención medica recibida de servidores públicos o privados." }
+        ];
+
+        const accordionContainer = document.getElementById('accordion-container');
+        derechos.forEach(derecho => {
+            const item = document.createElement('div');
+            item.className = 'border rounded-md overflow-hidden'; // Se añade overflow-hidden aquí para el redondeo
+            // CAMBIO: Se reestructura el contenido del acordeón para una correcta animación
+            item.innerHTML = `
+                <button class="accordion-button w-full text-left p-4 bg-gray-100 hover:bg-gray-200 focus:outline-none flex justify-between items-center">
+                    <span class="font-semibold text-primary-blue">${derecho.title}</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-white">
+                    <div class="p-4 border-t">
+                        <p class="text-gray-700">${derecho.content}</p>
+                    </div>
+                </div>
+            `;
+            accordionContainer.appendChild(item);
+        });
+
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                document.querySelectorAll('.accordion-content').forEach(otherContent => {
+                    if (otherContent !== content && otherContent.style.maxHeight) {
+                        otherContent.style.maxHeight = null;
+                        otherContent.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('rotate-180');
+                } else {
+                    // Se usa scrollHeight del div interior para obtener la altura correcta
+                    content.style.maxHeight = content.firstElementChild.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // --- SCRIPT PARA EL FILTRO DE ASEGURADORAS ---
+        const insurers = [
+            "Administradores De Redes De Descuento, Health & Benefits, S.A. de C.V. (H&B)", "Allianz México, S.A., Compañía de seguros", "Aseguradora Interacciones, S.A. de C.V.",
+            "Axa Assistance México, S.A. de C.V.", "Axa Seguros, S.A. de C.V.", "Bupa México", "Cigna Global Health Benefits Antes: Vanbreda Internacional Nv", "Coris Usa, Inc",
+            "General de Salud Compañía de Seguros, S.A.", "HDI Seguros", "Inflexión En Salud, S.A de C.V. (Sisnova)", "La Latino Seguros S.A.",
+            "LOGEM Operadora Mexicana de Asistencia Universal, S.A. de C.V.", "Mapfre Tepeyac, S.A.", "Mediaccess S.A.P.I. de C.V.", "Multiasistencia, S.A. de C.V. (Seguros Bancomer)",
+            "Neo Salud Seguros, S.A. de C.V.", "Plan Seguro, S.A. de C.V. Compañía de seguros", "Prevem Seguros, S.A. de C", "Salud Argos", "Salud Interactiva, S.A. de C.V. (Medical Home)",
+            "Seguros Atlas, S.A.", "Seguros Banorte Generali, S.A. de C.V.", "Seguros Inbursa S.A., Grupo Financiero Inbursa", "Seguros Monterrey New York Life, S.A. de C.V.",
+            "Seguros Sura, S.A. de C.V.", "Seguros Ve Por Más, S.A. de C.V.", "ServAsist, S.A. de C.V. (Ike Asistencia)", "Sinergia Médica", "Thona Seguros, S.A. de C.V.",
+            "Vitamédica, S.A. de C.V.", "Word Travel Assist America, Llc (Wta)", "Zurich Vida Compañía de seguros, S.A."
+        ];
+
+        const insurerListContainer = document.getElementById('insurer-list');
+        const insurerSearchInput = document.getElementById('insurer-search');
+
+        const displayInsurers = (filteredInsurers) => {
+            insurerListContainer.innerHTML = '';
+            if (filteredInsurers.length === 0) {
+                 insurerListContainer.innerHTML = `<p class="text-gray-500 md:col-span-2 lg:col-span-3">No se encontraron aseguradoras.</p>`;
+            } else {
+                filteredInsurers.forEach(insurer => {
+                    const item = document.createElement('div');
+                    item.className = 'insurer-item';
+                    item.innerHTML = `<span>${insurer}</span>`;
+                    insurerListContainer.appendChild(item);
+                });
+            }
+        };
+
+        insurerSearchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = insurers.filter(insurer => insurer.toLowerCase().includes(searchTerm));
+            displayInsurers(filtered);
+        });
+
+        // Mostrar todas al inicio
+        displayInsurers(insurers);
+    </script>
+</body>
+</html>
