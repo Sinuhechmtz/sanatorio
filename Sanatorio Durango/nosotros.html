@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <!-- ============== METADATOS ESENCIALES ============== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CAMBIO: Título específico para la página de Nosotros -->
+    <title>Nosotros - Sanatorio Durango</title>
+
+    <!-- ============== ICONO DE LA PESTAÑA (FAVICON) ============== -->
+    <link rel="icon" href="img/icono.ico" type="image/png">
+
+    <!-- ============== FRAMEWORK DE DISEÑO (TAILWIND CSS) ============== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ============== ICONOS (FONT AWESOME) ============== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ============== FUENTES (GOOGLE FONTS) ============== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ============== CONFIGURACIÓN Y ESTILOS PERSONALIZADOS ============== -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-blue': '#0D47A1',
+                        'accent-teal': '#009688',
+                        'dark-text': '#333333',
+                        'light-gray': '#F5F5F5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+      .group:hover .group-hover\:block {
+        display: block;
+      }
+      .mega-menu {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+</head>
+<body class="font-roboto text-dark-text">
+
+    <!-- ======================= ENCABEZADO Y NAVEGACIÓN ======================= -->
+    <!-- Este encabezado es el mismo que en la página de inicio para mantener la consistencia. -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo del Sanatorio -->
+            <a href="index.html">
+                <img src="img/Logo.jpg" alt="Logo Sanatorio Durango" class="h-12">
+            </a>
+            <!-- Menú de Navegación para Escritorio -->
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Inicio</a></li>
+                <li><a href="nosotros.html" class="text-accent-teal font-bold transition duration-300">Nosotros</a></li> <!-- ESTILO: Indica la página activa -->
+                
+                <!-- Mega Menú de Servicios (idéntico al de index.html) -->
+                <li class="relative group">
+                    <a href="#" class="text-gray-700 hover:text-accent-teal transition duration-300">
+                        Servicios <i class="fas fa-angle-down text-xs"></i>
+                    </a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-lg top-full pt-8 pb-6 px-8 w-[800px] mega-menu">
+                        <div class="grid grid-cols-4 gap-8">
+                            <!-- Columna 1 -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Especialidades</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="medicina-interna.html" class="block text-sm text-gray-700 hover:text-accent-teal">Medicina Interna</a></li>
+                                    <li><a href="obstetricia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Obstetricia</a></li>
+                                    <li><a href="oncologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Oncología</a></li>
+                                    <li><a href="quirofanos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quirófanos</a></li>
+                                    <li><a href="unidad-endoscopia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad de Endoscopía</a></li>
+                                    <li><a href="consulta-externa.html" class="block text-sm text-gray-700 hover:text-accent-teal">Consulta Externa</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 2 -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Diagnóstico</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="analisis-clinicos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Análisis Clínicos</a></li>
+                                    <li><a href="anatomia-patologica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Anatomía Patológica</a></li>
+                                    <li><a href="resonancia-magnetica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Resonancia Magnética</a></li>
+                                    <li><a href="tomografia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tomografía</a></li>
+                                    <li><a href="ultrasonido.html" class="block text-sm text-gray-700 hover:text-accent-teal">Ultrasonido</a></li>
+                                    <li><a href="hemodinamia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Hemodinamia</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 3 -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Terapias y Cuidados</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="terapia-intensiva.html" class="block text-sm text-gray-700 hover:text-accent-teal">Terapia Intensiva e Intermedia</a></li>
+                                    <li><a href="unidad-coronaria.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad Coronaria</a></li>
+                                    <li><a href="cuidados-intensivos-neonatales.html" class="block text-sm text-gray-700 hover:text-accent-teal">Cuidados Intensivos Neonatales</a></li>
+                                    <li><a href="fisioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Fisioterapia</a></li>
+                                    <li><a href="quimioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quimioterapia</a></li>
+                                    <li><a href="clinica-dolor.html" class="block text-sm text-gray-700 hover:text-accent-teal">Clínica de Dolor</a></li>
+                                </ul>
+                            </div>
+                           <!-- Columna 4 -->
+                            <div>
+                               <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Otros Servicios</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="urgencias.html" class="block text-sm text-gray-700 hover:text-accent-teal">Urgencias</a></li>
+                                    <li><a href="banco-de-sangre.html" class="block text-sm text-gray-700 hover:text-accent-teal">Banco de Sangre</a></li>
+                                    <li><a href="inhaloterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Inhaloterapia</a></li>
+                                    <li><a href="tanatologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tanatología</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="maternidad.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Maternidad</a></li>
+                <li><a href="guia-paciente.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Guía del Paciente</a></li>
+                <li><a href="contacto.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Contacto</a></li>
+            </ul>
+             <!-- Botón de Llamada a la Acción -->
+            <a href="agendar-cita.html" class="hidden lg:block bg-accent-teal text-white font-bold py-2 px-6 rounded-full hover:bg-teal-700 transition duration-300">
+                Agendar Cita
+            </a>
+            <!-- Botón para Menú Móvil -->
+            <button id="mobile-menu-button" class="lg:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ======================= CONTENIDO DE LA PÁGINA NOSOTROS ======================= -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-montserrat font-bold text-center text-primary-blue mb-16">Nuestra Institución</h1>
+                
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg max-w-5xl mx-auto">
+                    
+                    <!-- Sección de Historia -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl md:text-3xl font-montserrat font-bold text-accent-teal mb-4">Historia y Compromiso</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            79 años ofreciendo servicios de salud.El Sanatorio Durango inicia sus labores  el  29 de abril de 1944,  cuando sus fundadores el Dr. Juan Pérez Muñoz, Médico Militar Gineco-obstetra, el Dr. Von Lichtemberg,  el Dr.  Enrique Stern y el Dr. Rafael Moreno Valle, deciden crear el Sanatorio Durango
+                        </p>
+                    </div>
+
+                    <!-- Sección de Misión y Visión con Imagen -->
+                    <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+                        <div class="order-2 md:order-1">
+                            <h2 class="text-2xl md:text-3xl font-montserrat font-bold text-accent-teal mb-4">Misión y Visión</h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                En esta sección, define claramente la misión del hospital (su propósito) y su visión (lo que aspiran a ser en el futuro). Esto ayuda a construir confianza y a comunicar los valores de la institución.
+                            </p>
+                        </div>
+                        <div class="order-1 md:order-2">
+                             <!-- CAMBIO: Agrega aquí la URL de tu imagen -->
+                            <img src="https://placehold.co/600x400/009688/FFFFFF?text=Instalaciones+Modernas" alt="Instalaciones del Sanatorio Durango" class="rounded-lg shadow-md w-full h-auto object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Sección de Valores -->
+                    <div class="border-t pt-12">
+                        <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-primary-blue mb-10 text-center">Nuestros Valores</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+                            <!-- Valor 1: Actitud de Servicio -->
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-hands-helping text-4xl text-accent-teal mt-1 w-12 text-center"></i>
+                                <div>
+                                    <h3 class="font-montserrat font-bold text-lg mb-1">Actitud de Servicio</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Ofrecer buena voluntad, honestidad, responsabilidad y cortesía, ser amables, comprensivos y empáticos para ayudar a resolver los problemas de las personas que nos rodean.</p>
+                                </div>
+                            </div>
+                            <!-- Valor 2: Ética -->
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-balance-scale text-4xl text-accent-teal mt-1 w-12 text-center"></i>
+                                <div>
+                                    <h3 class="font-montserrat font-bold text-lg mb-1">Ética</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Basada en los principios que rigen la conducta adecuada para tomar la mejor decisión médica, pensando siempre en el beneficio del paciente.</p>
+                                </div>
+                            </div>
+                            <!-- Valor 3: Reconocimiento -->
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-award text-4xl text-accent-teal mt-1 w-12 text-center"></i>
+                                <div>
+                                    <h3 class="font-montserrat font-bold text-lg mb-1">Reconocimiento</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Dar honor a quien honor merece por la mejor práctica de sus funciones.</p>
+                                </div>
+                            </div>
+                             <!-- Valor 4: Innovación -->
+                             <div class="flex items-start space-x-4">
+                                <i class="fas fa-lightbulb text-4xl text-accent-teal mt-1 w-12 text-center"></i>
+                                <div>
+                                    <h3 class="font-montserrat font-bold text-lg mb-1">Innovación</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Tener una actitud positiva al cambio, en búsqueda continua y creativa de nuevos paradigmas.</p>
+                                </div>
+                            </div>
+                            <!-- Valor 5: Calidad -->
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-star text-4xl text-accent-teal mt-1 w-12 text-center"></i>
+                                <div>
+                                    <h3 class="font-montserrat font-bold text-lg mb-1">Calidad</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Nuestra filosofía está centrada en la satisfacción de nuestros pacientes, sus familiares y las compañías a quienes damos servicio.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección Comités -->
+                    <div class="mt-16 border-t pt-8 text-center">
+                        <h3 class="text-xl font-montserrat font-bold text-accent-teal mb-4">Certificaciones</h3>
+                        <p class="text-gray-600">Registro del Comité de Ética en Investigación</p>
+                        <p class="text-gray-600">Registro del Comité Hospitalario de Bioética</p>
+                   </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= PIE DE PÁGINA (FOOTER) ======================= -->
+    <!-- El pie de página es el mismo en todas las páginas. -->
+    <footer class="bg-primary-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 mb-8">
+            <!-- Columna 1: Sobre el Hospital -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Sanatorio Durango</h4>
+                <p class="text-gray-300 text-sm">79 años de experiencia cuidando la salud de la comunidad.</p>
+                <p class="text-gray-300 text-sm mt-2">Licencia Sanitaria: 1006000008</p>
+            </div>
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Navegación</h4>
+                <ul>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Servicios</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Directorio Médico</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Bolsa de Trabajo</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-gray-300 hover:text-white transition">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Columna 3: Contacto -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Contacto</h4>
+                <p class="text-gray-300 text-sm mb-2"><i class="fas fa-phone mr-2"></i> 55-5148-4658</p>
+                <p class="text-gray-300 text-sm"><i class="fas fa-map-marker-alt mr-2"></i> Durango 296, Col. Roma, CDMX</p>
+            </div>
+            <!-- Columna 4: Redes Sociales -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-blue-800 text-center pt-6">
+            <p class="text-gray-400 text-sm">&copy; 2025 Sanatorio Durango. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

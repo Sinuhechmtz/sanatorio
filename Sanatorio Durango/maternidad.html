@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <!-- ============== METADATOS ESENCIALES ============== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maternidad y Parto Humanizado - Sanatorio Durango</title>
+
+    <!-- ============== ICONO DE LA PESTAÑA (FAVICON) ============== -->
+    <link rel="icon" href="img/icono.ico" type="image/png">
+
+    <!-- ============== FRAMEWORK DE DISEÑO (TAILWIND CSS) ============== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ============== ICONOS (FONT AWESOME) ============== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ============== FUENTES (GOOGLE FONTS) ============== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ============== CONFIGURACIÓN Y ESTILOS PERSONALIZADOS ============== -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-blue': '#0D47A1',
+                        'accent-teal': '#009688',
+                        'dark-text': '#333333',
+                        'light-gray': '#F5F5F5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+      .group:hover .group-hover\:block { display: block; }
+      .mega-menu { left: 50%; transform: translateX(-50%); }
+      .hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+        background-size: cover;
+      }
+    </style>
+</head>
+<body class="font-roboto text-dark-text">
+
+    <!-- ======================= ENCABEZADO Y NAVEGACIÓN ======================= -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html">
+                <img src="img/Logo.jpg" alt="Logo Sanatorio Durango" class="h-12">
+            </a>
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Inicio</a></li>
+                <li><a href="nosotros.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Nosotros</a></li>
+                
+                <!-- Mega Menú de Servicios -->
+                <li class="relative group">
+                    <a href="#" class="text-gray-700 hover:text-accent-teal transition duration-300">
+                        Servicios <i class="fas fa-angle-down text-xs"></i>
+                    </a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-lg top-full pt-8 pb-6 px-8 w-[800px] mega-menu">
+                        <div class="grid grid-cols-4 gap-8">
+                            <!-- Columna 1: Especialidades -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Especialidades</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="medicina-interna.html" class="block text-sm text-gray-700 hover:text-accent-teal">Medicina Interna</a></li>
+                                    <li><a href="obstetricia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Obstetricia</a></li>
+                                    <li><a href="oncologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Oncología</a></li>
+                                    <li><a href="quirofanos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quirófanos</a></li>
+                                    <li><a href="unidad-endoscopia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad de Endoscopía</a></li>
+                                    <li><a href="consulta-externa.html" class="block text-sm text-gray-700 hover:text-accent-teal">Consulta Externa</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 2: Diagnóstico -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Diagnóstico</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="analisis-clinicos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Análisis Clínicos</a></li>
+                                    <li><a href="anatomia-patologica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Anatomía Patológica</a></li>
+                                    <li><a href="resonancia-magnetica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Resonancia Magnética</a></li>
+                                    <li><a href="tomografia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tomografía</a></li>
+                                    <li><a href="ultrasonido.html" class="block text-sm text-gray-700 hover:text-accent-teal">Ultrasonido</a></li>
+                                    <li><a href="hemodinamia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Hemodinamia</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 3: Terapias y Cuidados -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Terapias y Cuidados</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="terapia-intensiva.html" class="block text-sm text-gray-700 hover:text-accent-teal">Terapia Intensiva e Intermedia</a></li>
+                                    <li><a href="unidad-coronaria.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad Coronaria</a></li>
+                                    <li><a href="cuidados-intensivos-neonatales.html" class="block text-sm text-gray-700 hover:text-accent-teal">Cuidados Intensivos Neonatales</a></li>
+                                    <li><a href="fisioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Fisioterapia</a></li>
+                                    <li><a href="quimioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quimioterapia</a></li>
+                                    <li><a href="clinica-dolor.html" class="block text-sm text-gray-700 hover:text-accent-teal">Clínica de Dolor</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 4: Otros Servicios -->
+                            <div>
+                               <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Otros Servicios</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="urgencias.html" class="block text-sm text-gray-700 hover:text-accent-teal">Urgencias</a></li>
+                                    <li><a href="banco-de-sangre.html" class="block text-sm text-gray-700 hover:text-accent-teal">Banco de Sangre</a></li>
+                                    <li><a href="inhaloterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Inhaloterapia</a></li>
+                                    <li><a href="tanatologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tanatología</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- ESTILO: Indica la página activa -->
+                <li><a href="maternidad.html" class="text-accent-teal font-bold transition duration-300">Maternidad</a></li>
+                <li><a href="guia-paciente.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Guía del Paciente</a></li>
+                <li><a href="contacto.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Contacto</a></li>
+            </ul>
+            <a href="agendar-cita.html" class="hidden lg:block bg-accent-teal text-white font-bold py-2 px-6 rounded-full hover:bg-teal-700 transition duration-300">
+                Agendar Cita
+            </a>
+            <button id="mobile-menu-button" class="lg:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ======================= SECCIÓN PRINCIPAL CON VIDEO ======================= -->
+        <section class="relative h-[70vh] flex items-center justify-center text-white text-center overflow-hidden">
+            <!-- Video de fondo -->
+            <!-- IMPORTANTE: Reemplaza la URL por un video relacionado a maternidad. -->
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="img/maternidad.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <!-- Capa de superposición -->
+            <div class="absolute top-0 left-0 w-full h-full bg-primary-blue bg-opacity-45"></div>
+            <!-- Contenido de texto -->
+            <div class="relative z-10 container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-montserrat font-bold mb-4">Un Parto Humanizado</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto">Donde la mamá y el bebé son los verdaderos protagonistas de la historia.</p>
+            </div>
+        </section>
+
+        <!-- ======================= QUÉ ES EL PARTO HUMANIZADO ======================= -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-center text-primary-blue mb-8">Confianza, Respeto y Calidez</h2>
+                <div class="text-gray-700 leading-relaxed space-y-4 text-justify">
+                    <p>La humanización del parto es un movimiento mundial que se basa en el respeto a los Derechos Humanos. Su propósito es promover la normalidad, lo fisiológico, seguro, saludable y trascendente para el que las mujeres están innatamente preparadas.</p>
+                    <p>Consiste en que la futura mamá decida cómo quiere llevar a cabo su parto, confiando en sus decisiones e informándose. Se parte de la base de que la madre no es una persona enferma, sino una mujer sana en un proceso saludable y natural que, en la mayoría de los casos, no requiere tratamiento, sólo observación y acompañamiento.</p>
+                    <p>Es lo opuesto a un parto medicalizado, en el cual la tecnología y los medicamentos sustituyen la fisiología de la mujer, desvirtuando la experiencia del nacimiento y generando riesgos innecesarios para la madre y el bebé.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= DERECHOS DE LA MADRE ======================= -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-center text-primary-blue mb-12">Tienes Derecho A...</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Tarjeta de Derecho -->
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-user-check text-3xl text-accent-teal mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">No ser considerada enferma</h3>
+                            <p class="text-gray-600">Vivir tu parto como un proceso natural y saludable.</p>
+                        </div>
+                    </div>
+                     <!-- Tarjeta de Derecho -->
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-user-friends text-3xl text-accent-teal mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">La participación de tu pareja</h3>
+                            <p class="text-gray-600">Estar acompañada por quien tú elijas durante el proceso.</p>
+                        </div>
+                    </div>
+                     <!-- Tarjeta de Derecho -->
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-shield-alt text-3xl text-accent-teal mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Sentirte dueña de tu cuerpo</h3>
+                            <p class="text-gray-600">Tomar decisiones informadas sobre las intervenciones.</p>
+                        </div>
+                    </div>
+                     <!-- Tarjeta de Derecho -->
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-heartbeat text-3xl text-accent-teal mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Sentir placer y sentir dolor</h3>
+                            <p class="text-gray-600">Expresar tus emociones y sensaciones libremente.</p>
+                        </div>
+                    </div>
+                     <!-- Tarjeta de Derecho -->
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-baby text-3xl text-accent-teal mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Vínculo inmediato con tu hijo</h3>
+                            <p class="text-gray-600">Fomentar el contacto piel con piel desde el primer momento.</p>
+                        </div>
+                    </div>
+                     <!-- Tarjeta de Derecho -->
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-hands-helping text-3xl text-accent-teal mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Al buen trato</h3>
+                            <p class="text-gray-600">Recibir atención médica con respeto, empatía y calidez.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= PAQUETES DE MATERNIDAD ======================= -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-center text-primary-blue mb-12">Nuestros Paquetes</h2>
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <!-- Paquete 1: Parto Humanizado -->
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden group">
+                        <!-- IMPORTANTE: Reemplazar con imagen de parto humanizado -->
+                        <img src="https://placehold.co/600x400/009688/FFFFFF?text=Parto+Humanizado" alt="Parto Humanizado" class="w-full h-64 object-cover group-hover:opacity-80 transition duration-300">
+                        <div class="p-8">
+                            <h3 class="font-montserrat text-2xl font-bold text-primary-blue mb-3">Parto Humanizado</h3>
+                            <p class="text-gray-600 mb-6">Un paquete diseñado para respetar tus decisiones y el proceso natural del nacimiento, en un ambiente seguro y con el mejor equipo médico.</p>
+                            <a href="#" class="font-bold text-accent-teal hover:underline">Conocer más detalles &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Paquete 2: Cesárea Humanizada -->
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden group">
+                         <!-- IMPORTANTE: Reemplazar con imagen de cesárea humanizada -->
+                        <img src="https://placehold.co/600x400/0D47A1/FFFFFF?text=Cesárea+Humanizada" alt="Cesárea Humanizada" class="w-full h-64 object-cover group-hover:opacity-80 transition duration-300">
+                         <div class="p-8">
+                            <h3 class="font-montserrat text-2xl font-bold text-primary-blue mb-3">Cesárea Humanizada</h3>
+                            <p class="text-gray-600 mb-6">Cuando una cesárea es necesaria, nos aseguramos de que la experiencia sea igual de cálida, respetuosa y centrada en el vínculo mamá-bebé.</p>
+                            <a href="#" class="font-bold text-accent-teal hover:underline">Conocer más detalles &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================= PIE DE PÁGINA (FOOTER) ======================= -->
+    <footer class="bg-primary-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 mb-8">
+            <!-- Columna 1 -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Sanatorio Durango</h4>
+                <p class="text-gray-300 text-sm">79 años de experiencia cuidando la salud de la comunidad.</p>
+                <p class="text-gray-300 text-sm mt-2">Licencia Sanitaria: 1006000008</p>
+            </div>
+            <!-- Columna 2 -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Navegación</h4>
+                <ul>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Servicios</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Directorio Médico</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Bolsa de Trabajo</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-gray-300 hover:text-white transition">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Columna 3 -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Contacto</h4>
+                <p class="text-gray-300 text-sm mb-2"><i class="fas fa-phone mr-2"></i> 55-5148-4658</p>
+                <p class="text-gray-300 text-sm"><i class="fas fa-map-marker-alt mr-2"></i> Durango 296, Col. Roma, CDMX</p>
+            </div>
+            <!-- Columna 4 -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-blue-800 text-center pt-6">
+            <p class="text-gray-400 text-sm">&copy; 2025 Sanatorio Durango. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

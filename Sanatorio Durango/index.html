@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <!-- ============== METADATOS ESENCIALES ============== -->
+    <!-- Define el conjunto de caracteres como UTF-8 para compatibilidad global. -->
+    <meta charset="UTF-8">
+    <!-- Asegura que la página se vea bien en todos los dispositivos (diseño responsivo). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título que aparece en la pestaña del navegador. -->
+    <title>Sanatorio Durango - Cuidando de Ti y Tu Familia</title>
+
+    <!-- ============== ICONO DE LA PESTAÑA (FAVICON) ============== -->
+    <!-- Este es el icono que identifica tu sitio. Debes crear una imagen de tu logo (ej. 32x32px) y guardarla como 'favicon.png'. -->
+    <link rel="icon" href="img/icono.ico" type="image/png">
+
+    <!-- ============== FRAMEWORK DE DISEÑO (TAILWIND CSS) ============== -->
+    <!-- Usamos Tailwind CSS para un diseño moderno y responsivo de manera rápida y eficiente. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ============== ICONOS (FONT AWESOME) ============== -->
+    <!-- Biblioteca de iconos para dar un aspecto más visual y profesional a los servicios. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ============== FUENTES (GOOGLE FONTS) ============== -->
+    <!-- Importamos fuentes modernas y legibles para títulos (Montserrat) y texto (Roboto). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ============== CONFIGURACIÓN Y ESTILOS PERSONALIZADOS ============== -->
+    <script>
+        // Aquí personalizamos Tailwind para agregar nuestras fuentes y colores.
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-blue': '#0D47A1', // Un azul corporativo que inspira confianza.
+                        'accent-teal': '#009688',   // Un verde/azul para acentos, asociado a la salud.
+                        'dark-text': '#333333',
+                        'light-gray': '#F5F5F5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+      /* Estilos para el menú desplegable (dropdown) al pasar el cursor */
+      .group:hover .group-hover\:block {
+        display: block;
+      }
+      /* Posicionamiento del Mega Menú */
+      .mega-menu {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      /* CAMBIO: Estilos para asegurar que el video de fondo cubra toda la sección */
+      .hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+        background-size: cover;
+        transition: 1s opacity;
+      }
+    </style>
+</head>
+<body class="font-roboto text-dark-text">
+
+    <!-- ======================= ENCABEZADO Y NAVEGACIÓN ======================= -->
+    <!-- Un encabezado 'sticky' (fijo en la parte superior) para que la navegación esté siempre accesible. -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo del Sanatorio -->
+            <a href="index.html"> <!-- CAMBIO: El logo ahora apunta a la página principal -->
+                <img src="img/Logo.jpg" alt="Logo Sanatorio Durango" class="h-12">
+            </a>
+
+            <!-- Menú de Navegación para Escritorio -->
+            <!-- La navegación se ha reorganizado en categorías lógicas para ser más intuitiva. -->
+            <ul class="hidden lg:flex items-center space-x-6">
+                <li><a href="index.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Inicio</a></li> <!-- CAMBIO: Enlace a la página principal -->
+                <li><a href="nosotros.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Nosotros</a></li> <!-- CAMBIO: Enlace a la página Nosotros -->
+                
+                <!-- ======================= INICIO DEL MEGA MENÚ DE SERVICIOS ======================= -->
+                <li class="relative group">
+                    <a href="#" class="text-gray-700 hover:text-accent-teal transition duration-300">
+                        Servicios <i class="fas fa-angle-down text-xs"></i>
+                    </a>
+                    <!-- Contenedor del Mega Menú: CORREGIDO para no desaparecer. -->
+                    <!-- Se eliminó el margen superior (mt-2) y se usó 'top-full' para anclarlo. Se ajustó el padding interno para mantener el espaciado. -->
+                    <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-lg top-full pt-8 pb-6 px-8 w-[800px] mega-menu">
+                        <div class="grid grid-cols-4 gap-8">
+                            <!-- Columna 1: Especialidades -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Especialidades</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="medicina-interna.html" class="block text-sm text-gray-700 hover:text-accent-teal">Medicina Interna</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="obstetricia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Obstetricia</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="oncologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Oncología</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="quirofanos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quirófanos</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="unidad-endoscopia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad de Endoscopía</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="consulta-externa.html" class="block text-sm text-gray-700 hover:text-accent-teal">Consulta Externa</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                </ul>
+                            </div>
+                            <!-- Columna 2: Diagnóstico y Laboratorio -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Diagnóstico</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="analisis-clinicos.html" class="block text-sm text-gray-700 hover:text-accent-teal">Análisis Clínicos</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="anatomia-patologica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Anatomía Patológica</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="resonancia-magnetica.html" class="block text-sm text-gray-700 hover:text-accent-teal">Resonancia Magnética</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="tomografia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tomografía</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="ultrasonido.html" class="block text-sm text-gray-700 hover:text-accent-teal">Ultrasonido</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="hemodinamia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Hemodinamia</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                </ul>
+                            </div>
+                            <!-- Columna 3: Terapias y Cuidados -->
+                            <div>
+                                <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Terapias y Cuidados</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="terapia-intensiva.html" class="block text-sm text-gray-700 hover:text-accent-teal">Terapia Intensiva e Intermedia</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="unidad-coronaria.html" class="block text-sm text-gray-700 hover:text-accent-teal">Unidad Coronaria</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="cuidados-intensivos-neonatales.html" class="block text-sm text-gray-700 hover:text-accent-teal">Cuidados Intensivos Neonatales</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="fisioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Fisioterapia</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="quimioterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Quimioterapia</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="clinica-dolor.html" class="block text-sm text-gray-700 hover:text-accent-teal">Clínica de Dolor</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                </ul>
+                            </div>
+                            <!-- Columna 4: Otros Servicios -->
+                            <div>
+                               <h4 class="font-montserrat font-bold text-primary-blue mb-4 border-b-2 border-accent-teal pb-2">Otros Servicios</h4>
+                                <ul class="space-y-2">
+                                    <li><a href="urgencias.html" class="block text-sm text-gray-700 hover:text-accent-teal">Urgencias</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="banco-de-sangre.html" class="block text-sm text-gray-700 hover:text-accent-teal">Banco de Sangre</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="inhaloterapia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Inhaloterapia</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                    <li><a href="tanatologia.html" class="block text-sm text-gray-700 hover:text-accent-teal">Tanatología</a></li> <!-- CAMBIO: Enlace a página específica -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- ======================= FIN DEL MEGA MENÚ DE SERVICIOS ======================= -->
+
+                <li><a href="maternidad.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Maternidad</a></li> <!-- CAMBIO: Enlace a la página Maternidad -->
+                <li><a href="guia-paciente.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Guía del Paciente</a></li> <!-- CAMBIO: Enlace a la página Guía del Paciente -->
+                <li><a href="contacto.html" class="text-gray-700 hover:text-accent-teal transition duration-300">Contacto</a></li> <!-- CAMBIO: Enlace a la página Contacto -->
+            </ul>
+            
+            <!-- Botón de Llamada a la Acción -->
+            <a href="agendar-cita.html" class="hidden lg:block bg-accent-teal text-white font-bold py-2 px-6 rounded-full hover:bg-teal-700 transition duration-300"> <!-- CAMBIO: Enlace a página de citas -->
+                Agendar Cita
+            </a>
+
+            <!-- Botón para Menú Móvil -->
+            <button id="mobile-menu-button" class="lg:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ======================= SECCIÓN PRINCIPAL (HERO) CON VIDEO ======================= -->
+        <!-- CAMBIO: Se reemplazó la imagen de fondo por una estructura de video. -->
+        <section class="relative h-[85vh] flex items-center justify-center text-white text-center overflow-hidden">
+            
+            <!-- Video de fondo -->
+            <!-- IMPORTANTE: Reemplaza la URL del 'src' con la ruta a tu propio archivo de video (ej. 'videos/sanatorio.mp4') -->
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="img/video sanatorio .mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+
+            <!-- Capa de superposición para mejorar la legibilidad del texto -->
+            <div class="absolute top-0 left-0 w-full h-full bg-primary-blue bg-opacity-20"></div>
+            
+            <!-- Contenido de texto, ahora con un z-index para estar por encima del video y la capa -->
+            <div class="relative z-10 container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-montserrat font-bold mb-4">Comprometidos con tu Bienestar</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Excelencia médica y calidez humana a tu servicio. Conoce nuestras especialidades y encuentra a tu médico.</p>
+                <div class="space-x-4">
+                    <a href="#" class="bg-accent-teal text-white font-bold py-3 px-8 rounded-full hover:bg-teal-700 transition duration-300">Ver Especialidades</a>
+                    <a href="directorio.html" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-primary-blue transition duration-300">Encontrar Médico</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= SERVICIOS DESTACADOS ======================= -->
+        <!-- En lugar de una lista larga, destacamos 4 servicios clave con iconos para una fácil digestión. -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-center text-primary-blue mb-12">Nuestros Servicios Destacados</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Tarjeta de Servicio 1: Maternidad -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-baby text-5xl text-accent-teal mb-6"></i>
+                        <h3 class="font-montserrat text-xl font-bold mb-2">Paquetes de Maternidad</h3>
+                        <p class="text-gray-600">Cuidado integral para ti y tu bebé en un ambiente seguro y confortable.</p>
+                    </div>
+                    <!-- Tarjeta de Servicio 2: Urgencias -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-heart-pulse text-5xl text-accent-teal mb-6"></i>
+                        <h3 class="font-montserrat text-xl font-bold mb-2">Urgencias 24/7</h3>
+                        <p class="text-gray-600">Atención médica inmediata con especialistas listos para cualquier emergencia.</p>
+                    </div>
+                    <!-- Tarjeta de Servicio 3: Diagnóstico -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-x-ray text-5xl text-accent-teal mb-6"></i>
+                        <h3 class="font-montserrat text-xl font-bold mb-2">Diagnóstico por Imagen</h3>
+                        <p class="text-gray-600">Tecnología de punta para diagnósticos precisos: Tomografía y Resonancia.</p>
+                    </div>
+                    <!-- Tarjeta de Servicio 4: Consulta Externa -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-hospital-user text-5xl text-accent-teal mb-6"></i>
+                        <h3 class="font-montserrat text-xl font-bold mb-2">Consulta Externa</h3>
+                        <p class="text-gray-600">Accede a nuestro directorio de médicos y agenda tu próxima cita.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================= LLAMADA A LA ACCIÓN (MATERNIDAD) ======================= -->
+        <!-- Una sección visualmente atractiva para promocionar un servicio clave. -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-primary-blue mb-4">El Comienzo de una Nueva Vida</h2>
+                    <p class="text-lg text-gray-700 mb-6">Descubre nuestros paquetes de maternidad, diseñados para ofrecerte tranquilidad y la mejor atención durante tu embarazo, parto y postparto.</p>
+                    <a href="maternidad.html" class="bg-accent-teal text-white font-bold py-3 px-8 rounded-full hover:bg-teal-700 transition duration-300">Más sobre Maternidad</a> <!-- CAMBIO: Enlace a la página Maternidad -->
+                </div>
+                <div>
+                    <img src="img/Paquetes_Maternidad.png" alt="Madre cargando a su bebé recién nacido" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================= PIE DE PÁGINA (FOOTER) ======================= -->
+    <!-- El footer está limpio y organizado con la información esencial. -->
+    <footer class="bg-primary-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 mb-8">
+            <!-- Columna 1: Sobre el Hospital -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Sanatorio Durango</h4>
+                <p class="text-gray-300 text-sm">79 años de experiencia cuidando la salud de la comunidad.</p>
+                <p class="text-gray-300 text-sm mt-2">Licencia Sanitaria: 1006000008</p>
+            </div>
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Navegación</h4>
+                <ul>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Servicios</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Directorio Médico</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white transition">Bolsa de Trabajo</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-gray-300 hover:text-white transition">Contacto</a></li> <!-- CAMBIO: Enlace a la página Contacto -->
+                </ul>
+            </div>
+            <!-- Columna 3: Contacto -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Contacto</h4>
+                <p class="text-gray-300 text-sm mb-2"><i class="fas fa-phone mr-2"></i> 55-5148-4658</p>
+                <p class="text-gray-300 text-sm"><i class="fas fa-map-marker-alt mr-2"></i> Durango 296, Col. Roma, CDMX</p>
+            </div>
+            <!-- Columna 4: Redes Sociales -->
+            <div>
+                <h4 class="font-montserrat text-lg font-bold mb-4">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-accent-teal text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-blue-800 text-center pt-6">
+            <p class="text-gray-400 text-sm">&copy; 2025 Sanatorio Durango. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
